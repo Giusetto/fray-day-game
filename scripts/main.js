@@ -17,14 +17,21 @@ let players = new Array;
 
 document.addEventListener("keyup", move);
 cubyElement.addEventListener("click", touch);
-const myTimoutFunction = setTimeout(finish, 3000, true);
+const myTimoutFunction = setTimeout(finish, 30000, true);
 
 for (i=0; i<2; i++){
-    players=prompt("name of the " + (i+1) + " player"); 
+    players[i]=prompt("name of the " + (i+1) + " player"); 
     
 }
 const playersElement = document.querySelector("#players");
-playersElement.innerHTML = "<h1>  </h1>";
+playersElement.innerHTML = "<h1> " + players[0] + " VS " +players[1]+ "</h1>"   ;
+
+/*
+while(i<5){
+    const myTimoutFunction = setTimeout(finish, 30000, true);
+    console.log(myTimoutFunction);
+    i++;
+}*/
 
 
 
@@ -44,7 +51,6 @@ function finish(cubyWon){
 }
 
 
-
 function touch (event) {
     finish(false);
     
@@ -61,7 +67,7 @@ function move(e) {
                 postop = 0;
             }
             strpos = postop + "px";        
-            cuby.style.top = strpos;
+            cubyElement.style.top = strpos;
             break;
             case 38: // up
             postop -= speed;
@@ -69,7 +75,7 @@ function move(e) {
                 postop = mainHeight - cubyHeight;
             }
             strpos = postop + "px";
-            cuby.style.top = strpos;
+            cubyElement.style.top = strpos;
             break;
             case 39: // right
             posleft += speed;
@@ -77,7 +83,7 @@ function move(e) {
                 posleft = 0;
             }
             strpos = posleft + "px";
-            cuby.style.left = strpos;
+            cubyElement.style.left = strpos;
             break;
             case 37: // left
             posleft -= speed;
@@ -85,7 +91,7 @@ function move(e) {
                 posleft = mainWidth - cubyWidth;
             }
             strpos = posleft + "px";
-            cuby.style.left = strpos;
+            cubyElement.style.left = strpos;
             break;
             default:
             }
