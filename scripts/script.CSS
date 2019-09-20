@@ -1,0 +1,11 @@
+.cuby {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: 5px;
+    font-size: 7rem;
+    text-align: center;
+  }
