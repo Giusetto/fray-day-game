@@ -15,6 +15,8 @@ const startButton = document.querySelector("#gamestart");
 
 let postop = +cubyStyle.top.slice(0, -2);
 let posleft = +cubyStyle.left.slice(0, -2);
+const startPostop=postop;
+const startPosleft=posleft;
 let strpos = "";
 let speed = 50;
 let players = new Array;
@@ -54,6 +56,9 @@ function game(e) {
 
 
     alert("Game start");
+    cubyElement.style.top=startPostop+"px";
+    cubyElement.style.left=startPosleft+"px";
+    cubyElement.style.backgroundColor="rgb(5, 73, 5";
     document.addEventListener("keyup", move);
     cubyElement.addEventListener("click", touch);
     myTimeOut = setTimeout(function () { finish(true); }, 3000);
