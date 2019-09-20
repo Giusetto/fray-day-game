@@ -1,5 +1,4 @@
 
-const cuby = document.querySelector(".cuby");
 const mainElement = document.querySelector("main");
 const mainStyle = getComputedStyle(mainElement);
 const mainHeight = +mainStyle.height.slice(0,-2);
@@ -14,22 +13,37 @@ let postop = +cubyStyle.top.slice(0,-2);
 let posleft = +cubyStyle.left.slice(0,-2);
 let strpos = "";
 let speed = 50;
-let flagTimeout=true;
+let players = new Array;
 
 document.addEventListener("keyup", move);
 cubyElement.addEventListener("click", touch);
+const myTimoutFunction = setTimeout(finish, 3000, true);
 
+for (i=0; i<2; i++){
+    players=prompt("name of the " + (i+1) + " player"); 
+    
+}
+const playersElement = document.querySelector("#players");
+playersElement.innerHTML = "<h1>  </h1>";
+
+
+
+ 
 function finish(cubyWon){
     document.removeEventListener("keyup", move);
     cubyElement.removeEventListener("click", touch);
     if (cubyWon){
-        cubyElement.style.backgroundColor= "yellow";   
-        alert("Cuby won");      
+        alert("Cuby won"); 
+        cubyElement.style.backgroundColor="green"; 
+
     }else{
+        alert("Mouse won"); 
         cubyElement.style.backgroundColor="red";   
-        alert("Mouse won");  
+        clearTimeout(myTimoutFunction);
     }
 }
+
+
 
 function touch (event) {
     finish(false);
