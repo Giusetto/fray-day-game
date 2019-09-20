@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="scripts/script.CSS">
+  <link rel="stylesheet" href="style/style.css">
+  <!--
   <style>
     .cuby {
       background-color: red;
@@ -19,7 +20,7 @@
       font-size: 7rem;
       text-align: center;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -38,10 +39,10 @@ property of event
         HINT : cuby.style.top = posTop + "%"; //and posTop should start at 0
     */
     const cuby = document.querySelector(".cuby");
-    let postop = 0;
-    let posleft = 0;
+    let postop = 10;
+    let posleft = 10;
     let strpos = "";
-
+    let speed=22; 
 
     document.addEventListener("keyup", move); /*I do not manage to 
 outsource a named function that takes the event! => do not put move(e) 
@@ -53,25 +54,26 @@ line (adding it there will break the code)!*/
 
     function move(e) { 
       console.log(e.keyCode);
+
       switch (e.keyCode) {
         case 40: // down
-          postop += 15;
+          postop += speed;
+          console.log(postop);
           strpos = postop + "%";
           cuby.style.top = strpos;
-          console.log( "e stre "+ strpos);
           break;
         case 38: // up
-          postop -= 15;
+          postop -= speed;
           strpos = postop + "%";
           cuby.style.top = strpos;
           break;
         case 39: // right
-          posleft += 10;
+          posleft += speed;
           strpos = posleft + "%";
           cuby.style.left = strpos;
           break;
         case 37: // left
-          posleft -= 10;
+          posleft -= speed;
           strpos = posleft + "%";
           cuby.style.left = strpos;
           break;
