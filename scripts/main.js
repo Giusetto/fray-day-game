@@ -19,18 +19,22 @@ let flagTimeout=true;
 document.addEventListener("keyup", move);
 cubyElement.addEventListener("click", touch);
 
-function touch (event) {
-    cubyElement.style.backgroundColor="red";
+function finish(cubyWon){
     document.removeEventListener("keyup", move);
     cubyElement.removeEventListener("click", touch);
-    alert("You win");  
+    if (cubyWon){
+        cubyElement.style.backgroundColor= "yellow";   
+        alert("Cuby won");      
+    }else{
+        cubyElement.style.backgroundColor="red";   
+        alert("Mouse won");  
+    }
 }
 
-
-
-
-
-
+function touch (event) {
+    finish(false);
+    
+}
 
 function move(e) {
     console.log(e.keyCode);
