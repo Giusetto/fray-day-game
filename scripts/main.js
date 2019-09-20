@@ -15,18 +15,19 @@ const cubyStyle = getComputedStyle(cubyElement);
 const cubyHeight = +cubyStyle.height.slice(0,-2);
 const cubyWidth = +cubyStyle.width.slice(0,-2);
 
+let postop = +cubyStyle.top.slice(0,-2);
+let posleft = +cubyStyle.left.slice(0,-2);
+let strpos = "";
+let speed = 50;
 
 document.addEventListener("keyup", move);
-
 cubyElement.addEventListener("click", touch);
-
 
 function touch (event) {
     cubyElement.style.backgroundColor="red";
     document.removeEventListener("keyup", move);
     cubyElement.removeEventListener("click", touch);
-    alert("You win");
-    
+    alert("You win");  
 }
 
 
@@ -36,7 +37,7 @@ function touch (event) {
 
 
 function move(e) {
-    //console.log(e.keyCode);
+    console.log(e.keyCode);
 
     
     switch (e.keyCode) {
