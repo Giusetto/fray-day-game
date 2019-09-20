@@ -4,6 +4,7 @@ let postop = 0;
 let posleft = 0;
 let strpos = "";
 let speed = 50;
+let flagTimeout=true;
 const mainElement = document.querySelector("main");
 const mainStyle = getComputedStyle(mainElement);
 const mainHeight = +mainStyle.height.slice(0,-2);
