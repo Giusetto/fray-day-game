@@ -2,8 +2,8 @@
 const cuby = document.querySelector(".cuby");
 let postop = 10;
 let posleft = 10;
-let strpos = "";
-let speed = 22;
+//let strpos = "";
+let speed = 50;
 
 document.addEventListener("keyup", move);
 
@@ -17,22 +17,22 @@ function move(e) {
         case 40: // down
             postop += speed;
             console.log(postop);
-            strpos = postop + "%";
+            strpos = postop + "px";
             cuby.style.top = strpos;
             break;
         case 38: // up
             postop -= speed;
-            strpos = postop + "%";
+            strpos = postop + "px";
             cuby.style.top = strpos;
             break;
         case 39: // right
             posleft += speed;
-            strpos = posleft + "%";
+            strpos = posleft + "px";
             cuby.style.left = strpos;
             break;
         case 37: // left
             posleft -= speed;
-            strpos = posleft + "%";
+            strpos = posleft + "px";
             cuby.style.left = strpos;
             break;
         default:
