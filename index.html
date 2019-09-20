@@ -13,68 +13,15 @@
 <body>
 
   <div class="cuby"></div>
-  <script>
-    /*
-        We aim to create a game where we can move cubby
-    */
-    /*
-        When a key is pressed down on the document
-        get the key that was pressed using key, code, or keyCode 
-property of event
-        if the key pressed is the down arrow
-        increase the CSS top property
-        HINT : cuby.style.top = posTop + "%"; //and posTop should start at 0
-    */
-    const cuby = document.querySelector(".cuby");
-    let postop = 10;
-    let posleft = 10;
-    let strpos = "";
-    let speed=22; 
 
-    document.addEventListener("keyup", move); /*I do not manage to 
-outsource a named function that takes the event! => do not put move(e) 
-here and it works!*/
 
-/* the event can be passed / accessed here 
-although it was not put as a parameter in the EventListener creation 
-line (adding it there will break the code)!*/
 
-    function move(e) { 
-      console.log(e.keyCode);
 
-      switch (e.keyCode) {
-        case 40: // down
-          postop += speed;
-          console.log(postop);
-          strpos = postop + "%";
-          cuby.style.top = strpos;
-          break;
-        case 38: // up
-          postop -= speed;
-          strpos = postop + "%";
-          cuby.style.top = strpos;
-          break;
-        case 39: // right
-          posleft += speed;
-          strpos = posleft + "%";
-          cuby.style.left = strpos;
-          break;
-        case 37: // left
-          posleft -= speed;
-          strpos = posleft + "%";
-          cuby.style.left = strpos;
-          break;
-        default:
-      }
-    }
 
-    /*
-      ADVANCED :
-          //move cubby 💩 using the arrow keys
-          //moving down when you press .... down
-          //move right when you press.... right
-    */
-  </script>
+<script src="scripts/main.js"></script>
+
+
+  
 </body>
 
 </html>
