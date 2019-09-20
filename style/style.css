@@ -5,12 +5,12 @@
     padding:0;
     }
 .cuby {
-    background-color: red;
+    background-color:rgb(5, 73, 5);
     height: 70px;
     width: 70px;
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 50%;
+    left: 50%;
     border-radius: 5px;
     font-size: 7rem;
     text-align: center;
@@ -18,7 +18,7 @@
   main{
     width: 900px;
     height: 700px;
-    border: 2px solid green;
+    border: 2px solid rgb(82, 2, 2);
     margin: 20px 20px;
     position: relative;
 
