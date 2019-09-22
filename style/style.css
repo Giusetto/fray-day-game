@@ -16,10 +16,16 @@
     text-align: center;
   }
   main{
-    width: 900px;
-    height: 700px;
+    width: 700px;
+    height: 600px;
     border: 2px solid rgb(82, 2, 2);
     margin: 20px 20px;
     position: relative;
 
+  }
+  section#wrapper{
+    display: flex;
+  }
+  section#rightside{
+    display: inline-block;
   }
